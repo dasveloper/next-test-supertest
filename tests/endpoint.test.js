@@ -16,7 +16,7 @@ describe("POST: /endpoint", () => {
     await testClient(endpointHandler)
       .post("/endpoint")
       .field("name", "John Doe")
-      .attach("avater", Buffer.from("a".repeat(1000)), "filename")
+      .attach("avatar", Buffer.from("a".repeat(1000)), "filename")
       .expect({ success: true })
       .expect(200);
   });
@@ -24,7 +24,7 @@ describe("POST: /endpoint", () => {
     await testClient(endpointHandler)
       .post("/endpoint")
       .field("name", "John Doe")
-      .attach("avater", Buffer.from("a".repeat(10000000)), "filename")
+      .attach("avatar", Buffer.from("a".repeat(10000000)), "filename")
       .expect({ success: true })
       .expect(200);
   });
